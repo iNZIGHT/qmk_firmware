@@ -47,6 +47,8 @@ LED_TYPE led[RGBLED_NUM];
 uint8_t rgblight_inited = 0;
 bool rgblight_timer_enabled = false;
 
+
+/*OWN RBG FUNCTIONS */
 void sethsv(uint16_t hue, uint8_t sat, uint8_t val, LED_TYPE *led1) {
   uint8_t r = 0, g = 0, b = 0, base, color;
 
@@ -108,6 +110,13 @@ void setrgb(uint8_t r, uint8_t g, uint8_t b, LED_TYPE *led1) {
   (*led1).b = b;
 }
 
+bool checkrgb(){
+    if(rgblight_config.enable)
+        return true;
+    else 
+        return false;
+
+}
 
 uint32_t eeconfig_read_rgblight(void) {
   return eeprom_read_dword(EECONFIG_RGBLIGHT);

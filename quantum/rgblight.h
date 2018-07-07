@@ -95,6 +95,7 @@ typedef union {
   };
 } rgblight_config_t;
 
+bool checkrgb(void);
 void rgblight_init(void);
 void rgblight_increase(void);
 void rgblight_decrease(void);
